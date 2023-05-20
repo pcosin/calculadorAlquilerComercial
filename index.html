@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.4/dist/tailwind.min.css" rel="stylesheet">
+  <title>Calculadora de Alquiler</title>
+</head>
+
+<body class="bg-gray-200 p-8">
+  <div class="max-w-md mx-auto bg-white rounded p-6 shadow-md">
+    <h1 class="text-2xl font-bold mb-6">Calculadora de Alquiler</h1>
+
+    <p class="mb-4 font-bold text-blue-800"><a href="https://www.bcra.gob.ar/PublicacionesEstadisticas/Principales_variables_datos.asp?serie=7988&detalle=%CDndice%20para%20Contratos%20de%20Locaci%F3n%20(ICL-Ley%2027.551,%20con%20dos%20decimales,%20base%2030.6.20=1)" target="_blank" rel="noopener noreferrer">Página de bcra para obtener datos de ICL</a></p>
+    <form id="alquilerForm">
+      <div class="mb-4">
+        <label for="iclInicial" class="block mb-2">ICL Inicial:</label>
+        <input type="text" id="iclInicial" name="iclInicial" class="w-full px-4 py-2 border border-gray-300 rounded" required>
+      </div>
+      <div class="mb-4">
+        <label for="iclFinal" class="block mb-2">ICL Final:</label>
+        <input type="text" id="iclFinal" name="iclFinal" class="w-full px-4 py-2 border border-gray-300 rounded" required>
+      </div>
+      <div class="mb-4">
+        <label for="valorInicial" class="block mb-2">Valor Inicial:</label>
+        <input type="text" id="valorInicial" name="valorInicial" class="w-full px-4 py-2 border border-gray-300 rounded" required>
+      </div>
+      <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+        Calcular
+      </button>
+    </form>
+    <div id="resultado" class="mt-6 hidden">
+      <h2 class="text-lg font-bold mb-4">Resultados:</h2>
+      <p class="mb-2">Aumento total: <span id="aumentoTotal"></span></p>
+      <p class="mb-2">Porcentaje de aumento: <span id="porcentajeAumento"></span>%</p>
+      <p>Nuevo valor de alquiler: <span id="nuevoValor"></span></p>
+    </div>
+  </div>
+
+  <script src="./simulador.js"></script>
+</body>
+
+</html>
